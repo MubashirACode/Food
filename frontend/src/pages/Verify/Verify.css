@@ -1,0 +1,38 @@
+.verify {
+    min-height: 100vh; /* Full viewport height for better coverage */
+    display: grid;
+    place-items: center; /* Center children both horizontally and vertically */
+    background-color: #f5f5f5; /* Light background for contrast */
+}
+
+.verify .spinner {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #e0e0e0; /* Light gray for base border */
+    border-top: 5px solid #ff6347; /* Tomato for spinning effect */
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    place-self: center; /* Fallback for centering */
+    /* Accessibility */
+    role: aria-role="status";
+    aria-label: "Loading payment verification";
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .verify .spinner {
+        width: 60px;
+        height: 60px;
+        border-width: 3px;
+        border-top-width: 3px;
+    }
+}
